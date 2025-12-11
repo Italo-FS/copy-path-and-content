@@ -1,0 +1,63 @@
+{
+  "name": "copy-path-and-content",
+  "publisher": "ItaloSilva",
+  "displayName": "CopyPathAndContent",
+  "description": "",
+  "version": "1.0.0",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.copyPathAndContent",
+        "title": "Copy Path + Content (Custom)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.copyPathAndContent",
+          "when": "explorerResourceIsFolder || resourceExtname =~ /.+/",
+          "group": "6_copypath@100"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "extension.copyPathAndContent",
+          "group": "6_copypath@100"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "extension.copyPathAndContent",
+          "group": "9_cutcopypaste@100"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.107.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.48.1",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
