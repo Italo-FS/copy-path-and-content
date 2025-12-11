@@ -5,6 +5,10 @@
   "description": "",
   "version": "1.0.0",
   "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Italo-FS/copy-path-and-content"
+  },
   "engines": {
     "vscode": "^1.107.0"
   },
